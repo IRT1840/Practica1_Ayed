@@ -139,34 +139,40 @@ rational_t::divide(const rational_t& r) const
 
 
 // FASE I: operadores
-rational_t
-operator+(const rational_t& a, const rational_t& b)
-{
-  // rellenar código
+
+//Sobrecarga del operador suma para objetos de la clase racional.
+rational_t operator+(const rational_t& a, const rational_t& b) {
+  int numerador{(a.get_num() * b.get_den()) + (b.get_num() * a.get_den())};
+  int denominador{a.get_den() * b.get_den()};
+  rational_t racional_suma{numerador, denominador};
+  return racional_suma;
 }
 
 
-
-rational_t
-operator-(const rational_t& a, const rational_t& b)
-{
-  // rellenar código
+//Sobrecarga del operador resta para objetos de la clase racional.
+rational_t operator-(const rational_t& a, const rational_t& b) {
+  int numerador{(a.get_num() * b.get_den()) - (b.get_num() * a.get_den())};
+  int denominador{a.get_den() * b.get_den()};
+  rational_t racional_resta{numerador, denominador};
+  return racional_resta;
 }
 
 
-
-rational_t
-operator*(const rational_t& a, const rational_t& b)
-{
-  // rellenar código
+//Sobrecarga del operador multiplicación para objetos de la clase racional.
+rational_t operator*(const rational_t& a, const rational_t& b) {
+  int numerador{a.get_num() * b.get_num()};
+  int denominador{a.get_den() * b.get_den()};
+  rational_t racional_producto{numerador, denominador};
+  return racional_producto;
 }
 
 
-
-rational_t
-operator/(const rational_t& a, const rational_t& b)
-{
-  // rellenar código
+//Sobrecarga del operador cociente para objetos de la clase racional.
+rational_t operator/(const rational_t& a, const rational_t& b) {
+  int numerador{a.get_num() * b.get_den()};
+  int denominador{a.get_den() * b.get_num()};
+  rational_t racional_cociente{numerador, denominador};
+  return racional_cociente;
 }
 
 

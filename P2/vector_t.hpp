@@ -125,9 +125,7 @@ vector_t<T>::get_size() const
 
 
 template<class T>
-void
-vector_t<T>::set_val(const int i, const T d)
-{
+void vector_t<T>::set_val(const int i, const T d) {
   assert(i >= 0 && i < get_size());
   v_[i] = d;
 }
@@ -135,9 +133,7 @@ vector_t<T>::set_val(const int i, const T d)
 
 
 template<class T>
-T&
-vector_t<T>::at(const int i)
-{
+T& vector_t<T>::at(const int i) {
   assert(i >= 0 && i < get_size());
   return v_[i];
 }
@@ -145,18 +141,14 @@ vector_t<T>::at(const int i)
 
 
 template<class T>
-T&
-vector_t<T>::operator[](const int i)
-{
+T& vector_t<T>::operator[](const int i) {
   return at(i);
 }
 
 
 
 template<class T>
-const T&
-vector_t<T>::at(const int i) const
-{
+const T& vector_t<T>::at(const int i) const {
   assert(i >= 0 && i < get_size());
   return v_[i];
 }
@@ -164,18 +156,14 @@ vector_t<T>::at(const int i) const
 
 
 template<class T>
-const T&
-vector_t<T>::operator[](const int i) const
-{
+const T& vector_t<T>::operator[](const int i) const {
   return at(i);
 }
 
 
 
 template<class T>
-void
-vector_t<T>::write(ostream& os) const
-{ 
+void vector_t<T>::write(ostream& os) const { 
   os << get_size() << ":\t";
   for (int i = 0; i < get_size(); i++)
     os << at(i) << "\t";
@@ -185,9 +173,7 @@ vector_t<T>::write(ostream& os) const
 
 
 template<class T>
-void
-vector_t<T>::read(istream& is)
-{
+void vector_t<T>::read(istream& is) {
   is >> sz_;
   resize(sz_);
   for (int i = 0; i < sz_; ++i)
@@ -197,16 +183,12 @@ vector_t<T>::read(istream& is)
 
 // FASE II: producto escalar
 template<class T>
-T
-scal_prod(const vector_t<T>& v, const vector_t<T>& w)
-{
+T scal_prod(const vector_t<T>& v, const vector_t<T>& w) {
   // rellenar código
 }
 
 
 
-double
-scal_prod(const vector_t<rational_t>& v, const vector_t<rational_t>& w)
-{
+double scal_prod(const vector_t<rational_t>& v, const vector_t<rational_t>& w) {
   // rellenar código 
 }
